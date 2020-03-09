@@ -1,5 +1,6 @@
 export default {
     products:[{
+        _id:'1',
         name: 'Slim Shirt',
         category:'Shirt',
         image:'/images/d1.jpg',
@@ -9,6 +10,7 @@ export default {
         numReviews:10
     },
     {
+        _id:'2',
         name: 'Corduroy Pants',
         category:'Pants',
         image:'/images/d1.jpg',
@@ -18,6 +20,18 @@ export default {
         numReviews:10
     },
     {
+        _id:'3',
+        name: 'Fit Shirt',
+        category:'Pants',
+        image:'/images/d1.jpg',
+        price:72,
+        brand:'Adidas',
+        rating:4.8,
+        numReviews:10
+    },
+
+    {
+        _id:'4',
         name: 'Fit Shirt',
         category:'Pants',
         image:'/images/d1.jpg',
