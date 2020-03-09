@@ -1,0 +1,31 @@
+{
+  "name": "barter",
+  "version": "1.0.0",
+  "description": "Backend for Barter",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec babel-node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhaji007/Barter.git"
+  },
+  "author": "Mehdi Hajikhani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhaji007/Barter/issues"
+  },
+  "homepage": "https://github.com/mhaji007/Barter#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.8.6",
+    "nodemon": "^2.0.2"
+  }
+}
