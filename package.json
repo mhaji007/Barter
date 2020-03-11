@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mhaji007/Barter#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "esm": "^3.2.25",
     "express": "^4.17.1"
   },
