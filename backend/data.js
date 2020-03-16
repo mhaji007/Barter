@@ -7,7 +7,9 @@ export default {
         price:23,
         brand:'Nike',
         rating:4.5,
-        numReviews:10
+        numReviews:10,
+        countInStock:0,
+        
     },
     {
         _id:'2',
@@ -17,7 +19,8 @@ export default {
         price:48,
         brand:'Levis',
         rating:3.4,
-        numReviews:10
+        numReviews:10,
+        countInStock:6
     },
     {
         _id:'3',
@@ -27,7 +30,8 @@ export default {
         price:72,
         brand:'Adidas',
         rating:4.8,
-        numReviews:10
+        numReviews:10,
+        countInStock:6
     },
 
     {

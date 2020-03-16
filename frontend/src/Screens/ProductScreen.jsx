@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {detailsProduct} from '../actions/productActions';
 
 function ProductScreen(props) {
-
+    const [qty, setQty] = useState(1);
     const productDetails = useSelector(state => state.productDetails);
     const{product, loading, error} = productDetails;
     const dispatch = useDispatch();
@@ -15,6 +15,10 @@ function ProductScreen(props) {
     
         };
     }, [])
+
+    const handleAddToCart = () => {
+        props.history.push("/cart/" + props.match.params.id + "?qty=" + qty);
+    }
     
     return <div>
 
@@ -52,19 +56,18 @@ function ProductScreen(props) {
                         Price: {product.price}
                     </li>
                     <li>
-                        Status: {product.status}
+                        Status: {product.countInStock>0?"In Stock":""}
                     </li>
                     <li>
-                        Qty: <select name="">
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                            <option value="4"></option>
+                        Qty: <select value={qty} onChange={(e)=>{setQty(e.target.value)}} name="">
+                            {[...Array(product.countInStock).keys()].map(x=>
+                            <option value={x+1}>{x+1}</option>
+                            )}
                     
                         </select>
                     </li>
-                    <li>
-                        <button className="button primary">Add to Cart</button>
+                    <li> {product.countInStock>0 ? <button onClick={handleAddToCart} className="button primary">Add to Cart</button>: <div>Out of Stock</div>}
+
                     </li>
                 </ul>
             </div>
