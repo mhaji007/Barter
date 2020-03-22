@@ -1,3 +1,6 @@
+import axios from "axios";
+import {CART_ADD_ITEM} from "../constants/cartConstants";
+
 const addToCart = (ProductId, qty) => async (dispatch) => {
     try {
         const {data} = await axios.get("/api/products/" + ProductId);
@@ -8,9 +11,11 @@ const addToCart = (ProductId, qty) => async (dispatch) => {
             price: data.price,
             name: data.countInStock,
             qty
-
-        }});
+        }
+    });
     } catch(error) {
 
     }
 }
+
+export {addToCart}
