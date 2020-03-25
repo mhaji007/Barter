@@ -1,5 +1,6 @@
 import axios from "axios";
-import {CART_ADD_ITEM} from "../constants/cartConstants";
+import Cookie from "js-cookie";
+import {CART_ADD_ITEM, CART_REMOVE_ITEM} from "../constants/cartConstants";
 
 const addToCart = (ProductId, qty) => async (dispatch) => {
     try {
@@ -14,8 +15,16 @@ const addToCart = (ProductId, qty) => async (dispatch) => {
         }
     });
     } catch(error) {
+    const {cart:{cartItems}} = getState();
+    Cookie.set("cartItems", JSON.stringify(cartItems));
+    }
+    const removeFromCart = (productId) => (dispatch, getState) => {
+        dispatch({type: CART_REMOVE_ITEM, payload: productId});
 
+        const {cart:{cartItems}} = getState();
+        Cookie.set("cartItems", JSON.stringify(cartItems));
     }
 }
+export {addToCart, removeFromCart}
 
 export {addToCart}
